@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'CorbertRegular';
+    src: url('corbert-regular.eot');
+    src: url('corbert-regular.eot') format('embedded-opentype'),
+         url('corbert-regular.woff') format('woff'),
+         url('corbert-regular.ttf') format('truetype'),
+         url('corbert-regular.svg#CorbertRegular') format('svg');
+}

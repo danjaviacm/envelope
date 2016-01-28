@@ -1,0 +1,551 @@
+// Most important styles
+body {
+    background-color: white;
+}
+
+// The header
+// -----------------------------------------------------------------------------
+header#comparamejor-main-header {
+    @logo-width: 250px;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: @header-height;
+    overflow-y: visible; // dropdowns
+    font-size: 12px;
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
+        height: @header-height-sm;
+    }
+    
+
+    @media(min-width: @screen-sm-min){
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: -4px;
+        }
+    }
+
+    @media (max-width: @screen-xs-max){
+
+      .contact-mobile, .submenu-mobile{
+        position: relative;
+        //width: 100%;
+        background: #ededed;
+        z-index:10000;
+        margin: 0 -15px !important;
+        //margin-top: 101px;
+        //height: auto;
+
+        /*&#user-block{
+          margin-top: 0px !important;
+          width: 100% !important;
+        }*/
+      }
+      .contact-mobile{
+        margin-top: 0px !important;
+        display: block;
+        padding: 10px !important;
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+      }
+
+      .submenu-mobile{
+        .dropdown-menu{
+          background: #fff;
+
+          a:hover{
+            color: #3399cc;
+          }
+        }
+      }
+    }
+
+    .navbar {
+        @links-line-height: round(@line-height-computed * 1.3);
+
+        height: @header-height;
+        background-color: white;
+        margin-bottom: 0;
+        border: none;
+
+        .navbar-brand {
+            height: @header-height;
+            padding: round((@header-height - @header-logo-height) * 0.5) @grid-gutter-width-half;
+        }
+
+        // Only for > sm devices
+        // -----------------------------------------------------------------------------
+        @media (min-width: @screen-sm-min){
+
+            div.navbar-collapse {
+                display: block;
+                float: none;
+                margin-left: @logo-width + @grid-gutter-width-half;
+                
+                div.block {
+                    &.top {
+                        height: round(@header-height * 0.5);
+                        float: right;
+                        padding-top: 5px; // vertically centering of the elements inside
+                        
+                        ul.navbar-nav {
+                            float: left;
+
+                            > li {
+                                padding: 0;
+                                
+                                // Account button
+                                // -----------------------------------------------------------------------------
+                                &#account-button {
+                                    padding-left: 0;
+
+                                    > a {
+                                        padding: 10px @grid-gutter-width 0 0;
+                                        line-height: @line-height-computed;
+                                        
+                                        i.fa-user {
+                                            color: @cm-dark-cyan;
+                                            text-align: center;
+                                            font-size: round(@links-line-height) * 0.7;
+                                            line-height: @links-line-height;
+                                            display: inline-block;
+                                            .square(@links-line-height);
+                                            float: left;
+                                            position: relative;
+                                            top: -3px;
+                                        }
+
+                                        span {
+                                            background-color: @gray-lighter;
+                                            color: #666;
+                                            height: @links-line-height;
+                                            display: inline-block;
+                                            padding: 0 round(@grid-gutter-width-half * 0.5);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    &.bottom {
+                        height: round(@header-height * 0.5);
+
+                        ul.navbar-nav {
+                            float: right;
+
+                            li:last-child {
+                                a {
+                                    padding-right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                ul.navbar-nav {
+                    > li {
+                        padding: 0;
+
+                        > a {
+                            padding: 0 round(@grid-gutter-width-half * 0.5);
+                            line-height: round(@header-height * 0.5);
+                            border-bottom: 3px solid transparent;
+                        }
+
+                        // Active items inside the navbar
+                        // -----------------------------------------------------------------------------
+                        @media (min-width: @screen-xs-max){ // only for > small
+                            &.active {
+                                > a {
+                                    background-color: transparent; // remove bootstrap default
+                                    border-bottom-color: @cm-light-blue;
+
+                                    &:hover {
+                                        background-color: transparent; // override bootstrap default
+                                    }
+                                }
+                            }
+                        }
+
+                        // Dropdowns
+                        // -----------------------------------------------------------------------------
+                        @media (min-width: @screen-xs-max){ // only for > small
+                            &.dropdown {
+
+                                // When the dropdown is open
+                                &.open {
+                                    > a {
+                                        background-color: transparent;
+                                        border-bottom-color: @cm-light-blue;
+                                    }
+
+                                    > .dropdown-menu {
+                                        margin-top: 5px * -1; // this is equivalent to the li padding
+                                        margin-left: round(@grid-gutter-width-half * 0.5); // the same as the a inside the li
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Remove the border in xs devices
+        // -----------------------------------------------------------------------------
+        @media (max-width: @screen-xs-max){
+            div.navbar-header {
+                a.navbar-brand {
+                }
+            }
+
+            div.navbar-collapse {
+                border-top: none;
+            }
+        }
+        
+        p#header-phones {
+            margin: 0;
+            padding: 0;
+            line-height: round(@header-height * 0.5);
+        }
+
+        /*p#header-phones {
+            @this-height: @links-line-height * 2;
+
+            height: @this-height;
+
+            i.fa {
+                .square(@this-height);
+                font-size: round(@this-height * 0.75);
+                line-height: @this-height;
+                display: inline-block;
+                float: left;
+                color: #4d4d4d; // TODO replace it
+                text-align: center;
+            }
+
+            span.phones {
+                display: inline-block;
+                text-align: center;
+                margin: round(@this-height * 0.1) 0;
+                height: round(@this-height * 0.8);
+
+                span.phone {
+                    display: block;
+                    text-align: center;
+                    white-space: nowrap;
+                    height: round(@this-height * 0.4);
+                    line-height: round(@this-height * 0.4);
+                    font-size: round((@this-height * 0.4) * 0.65);
+                    letter-spacing: 0.5px;
+                }
+            }
+        }*/
+    }
+}
+
+// Header SM
+// -----------------------------------------------------------------------------
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
+    header#comparamejor-main-header {
+        .navbar {
+            height: @header-height-sm;
+
+            > div.container {
+                // to position the navbar-nav absolutely
+                position: relative;
+                height: 100%;
+
+                div.bottom {
+                    ul.navbar-nav {
+                        display: block;
+                        position: absolute;
+                        bottom: 0;
+                        right: @grid-gutter-width-half;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// The footer
+// -----------------------------------------------------------------------------
+footer#comparamejor-main-footer {
+    @icon-radius: 65px;
+    @wave-height: 43px; // the wave pattern image at the top
+
+    background-color: @cm-strong-blue;
+    color: white;
+    position: relative;
+    //  margin-top: 22px; // the height of the white area in the waves pattern
+    margin-top: @wave-height + @grid-gutter-width;
+
+    // wave pattern
+    /*&:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: @wave-height;
+        background: url('@{frontendquillo-images-path}patterns/footer-wave.png') repeat-x left top transparent;
+        position: absolute;
+        left: 0;
+        //    top: round(@wave-height * 0.5) * -1;
+        top: @wave-height * -1;
+    }*/
+
+    div.top {
+        @footer-trunk-width: 349px;
+        @footer-trunk-height: round(284px / 2); // the image height / 2
+
+        padding: @grid-gutter-width + round(@wave-height * 0.5) 0 @grid-gutter-width 0;
+        position: relative;
+
+        // To position the
+        @media (max-width: @screen-sm-max){
+            padding-bottom: @footer-trunk-height + @grid-gutter-width-half;
+        }
+
+        // High up z-index for these cols to prevent conflicts with the octopus
+        > div.container > div.row div[class*="col"] {
+            position: relative;
+            z-index: 2;
+        }
+
+        // footer trunk
+        div#footer-trunk {
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            z-index: 1;
+            background: url('@{frontendquillo-images-path}main/footer-sprite.png') no-repeat -150px -142px transparent;
+            width: @footer-trunk-width;
+            height: @footer-trunk-height;
+
+            &:hover {
+                background-position: -150px 0px;
+            }
+        }
+
+        div.footer-links {
+            div.links-group {
+                header {
+                    .clearfix();
+                    display: block;
+                    position: relative;
+
+                    span.icon {
+                        display: block;
+                        .square(@icon-radius);
+                        text-align: center;
+                        line-height: @icon-radius;
+                        border: 1px solid white;
+                        border-radius: 100%;
+                        background-color: @cm-strong-blue;
+                        float: left;
+                        position: relative;
+                        z-index: 3;
+
+                        i.cm {
+                            .square(@icon-radius);
+                            font-size: round(@icon-radius * 0.6);
+                            text-align: center;
+                            line-height: @icon-radius;
+                        }
+                    }
+
+                    .text {
+                        display: inline-block;
+                        width: auto;
+                        float: none;
+                        margin: 0 0 0 round(@icon-radius * 0.5);
+                        padding: round((@icon-radius - @font-size-h3) * 0.5) 5px 3px round(@icon-radius * 0.5) + 10px;
+                        border-bottom: 1px solid white;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        z-index: 2;
+                        font-size: 24px;
+                    }
+                }
+
+                ul.links {
+                    padding-left: @icon-radius + 10px;
+
+                    li {
+                        a {
+                            color: white;
+                            font-size: @font-size-small;
+                            line-height: round(@font-size-small * 2.3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div.bottom {
+        display: block;
+        padding: @grid-gutter-width-half 0;
+        background-color: @cm-dark-blue;
+        position: relative;
+        z-index: 2; // to overlap the footer trunk
+
+        div.links {
+            font-size: @font-size-small;
+
+            a {
+                color: @cm-light-blue;
+            }
+        }
+
+        nav#footer-social-buttons {
+            display: inline-block;
+            width: auto;
+            float: left;
+            .clearfix();
+
+            a {
+                @icon-radius: round(@grid-gutter-width * 1.2);
+
+                display: inline-block;
+                float: left;
+                margin-right: @grid-gutter-width;
+                color: white;
+
+                &:hover {
+                    text-decoration: none;
+                    color: @cm-light-blue;
+                }
+
+                i.fa {
+                    display: block;
+                    .square(@icon-radius);
+                    text-align: center;
+                    font-size: @icon-radius;
+                    line-height: @icon-radius;
+                }
+            }
+        }
+
+        div.footer-logos {
+            div.col {
+                display: inline-block;
+                vertical-align: middle;
+                //float: left;
+                margin: 0px 7px;
+                text-align: center;
+
+
+
+                p {
+                    font-size: @font-size-small;
+                    color: lighten(@cm-dark-blue, 10%);
+                }
+
+                div.logo-mx{
+                  display: inline-block;
+                  text-align: center;
+                  @logo-height: 59px;
+
+                  a{
+                    display: inline-block;
+                    height: @logo-height;
+                    background-image: url('@{frontendquillo-images-path}main/footer-sprite-mexico.png');
+
+                    &.cnsf {
+                      width: 150px;
+                      background-position: left (@logo-height * 3) * -1;
+                    }
+                  }
+                }
+
+                div.logo {
+                    display: inline-block;
+                    text-align: center;
+                    @logo-height: 59px;
+
+                    a {
+                        display: inline-block;
+                        height: @logo-height;
+                        background-image: url('@{frontendquillo-images-path}main/footer-sprite.png');
+
+                        &.founder-institute {
+                            width: 109px;
+                            background-position: left top;
+                        }
+
+                        &.norton {
+                            width: 105px;
+                            background-position: left (@logo-height * 1) * -1;
+                        }
+
+                        &.place-to-pay {
+                            width: 119px;
+                            background-position: left (@logo-height * 2) * -1;
+                        }
+
+                        &.superfinanciera {
+                            width: 150px;
+                            background-position: left (@logo-height * 3) * -1;
+                        }
+
+                        &.ecommerceaward {
+                            width: 137px;
+                            height: 138px;
+                            background-position: left -285px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Responsive footer
+    // -----------------------------------------------------------------------------
+    @media (max-width: @screen-xs-max){
+        div.top {
+            overflow-x: hidden; // the footer trunk gets out of the box
+
+            div.footer-links {
+                div.links-group {
+                    display: block;
+                    margin-bottom: @grid-gutter-width;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    header {
+                        h3 {
+                            display: block;
+                            position: relative;
+                        }
+                    }
+                }
+            }
+        }
+
+        div.bottom {
+            text-align: center;
+
+            div.left-col {
+                margin-bottom: @grid-gutter-width;
+            }
+
+            div.wrapper {
+                display: block;
+                text-align: center;
+
+                div.social-buttons-wrapper {
+                    margin: 0 auto;
+                    float: none !important;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: @headings-font-family;
+  font-weight: @font-weight-medium;
+
+  &.corbert {
+    font-family: @headings-font-family-alt;
+    font-weight: @font-weight-normal;
+    letter-spacing: 0 !important;
+  }
+
+  &.open-sans {
+    font-family: @font-family-base;
+    font-weight: @font-weight-normal;
+    letter-spacing: 0 !important;
+  }
+
+  &.bebas {
+    font-family: @bebas-font-family;
+    font-weight: normal;
+    letter-spacing: 0 !important; // TODO check the "why" for this rule
+  }
+}
+
+.h1, h1 { letter-spacing: @letter-spacing-h1; }
+.h2, h2 { letter-spacing: @letter-spacing-h2; }
+.h3, h3 { letter-spacing: @letter-spacing-h3; }
+.h4, h4 { letter-spacing: @letter-spacing-h4; }
+.h5, h5 { letter-spacing: @letter-spacing-h5; }
+.h6, h6 { letter-spacing: @letter-spacing-h6; }
+
+h1, .h1 {
+  &.x2, .x2 { font-size: round(@font-size-h1 * 1.5); }
+  &.x3, .x3 { font-size: round(@font-size-h1 * 2); }
+  &.x4, .x4 { font-size: round(@font-size-h1 * 2.5); }
+}
+
+.futura {
+  font-family: @headings-font-family; // the futura
+  font-weight: @font-weight-normal;
+}
+
+.small {
+  font-size: @font-size-small;
+  line-height: @line-height-small;
+}

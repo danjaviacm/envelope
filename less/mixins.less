@@ -1,0 +1,142 @@
+.background-size(@bg-size){
+    -webkit-background-size: @bg-size;
+    -moz-background-size: @bg-size;
+    -o-background-size: @bg-size;
+    background-size: @bg-size;
+}
+
+// Vertically centered elements
+// -----------------------------------------------------------------------------
+.vertically-centered-wrapper(){
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.vertically-centered-wrapped(){
+    display: table-cell;
+    vertical-align: middle;
+    float: none; // for some elements that may be floated
+}
+
+//Border radius
+.border-radius(@top:10px, @right:10px, @bottom:10px, @left:10px){
+    -webkit-border-radius: @arguments;
+    -moz-border-radius: @arguments;
+    -o-border-radius: @arguments;
+    border-radius: @arguments;
+}
+
+.border-radius-all(@value:10px){
+    -webkit-border-radius: @value;
+    -moz-border-radius: @value;
+    -o-border-radius: @value;
+    border-radius: @value;   
+}
+
+.box-sizing(@value){
+  -moz-box-sizing: @value;
+  -webkit-box-sizing: @value;
+  -o-box-sizing: @value;
+  box-sizing: @value;
+}
+
+
+[class^="additional-cm-icon-"], [class*=" additional-cm-icon-"] {
+    font-family: 'cm-font-additional';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.additional-cm-icon-aig:before {
+    content: "\e600";
+}
+.additional-cm-icon-ana:before {
+    content: "\e601";
+}
+.additional-cm-icon-axa:before {
+    content: "\e602";
+}
+.additional-cm-icon-hdi:before {
+    content: "\e603";
+}
+.additional-cm-icon-qualitas:before {
+    content: "\e604";
+}
+
+
+[class^="cmuj-"], [class*=" cmuj-"] {
+	font-family: 'cmuj';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.cmuj-car:before {
+	content: "\e600";
+}
+.cmuj-van:before {
+	content: "\e601";
+}
+.cmuj-motorcycle:before {
+	content: "\e602";
+}
+.cmuj-truck:before {
+	content: "\e603";
+}
+.cmuj-bus:before {
+	content: "\e604";
+}
+.cmuj-local:before {
+	content: "\e605";
+}
+.cmuj-path:before {
+	content: "\e606";
+}
+.cmuj-taxi:before {
+	content: "\e607";
+}
+.cmuj-identification1:before {
+	content: "\e608";
+}
+.cmuj-identification2:before {
+	content: "\e609";
+}
+.cmuj-passport:before {
+	content: "\e60a";
+}
+.cmuj-sheet:before {
+	content: "\e60b";
+}
+.cmuj-male:before {
+	content: "\e60c";
+}
+.cmuj-female:before {
+	content: "\e60d";
+}
+.cmuj-letter:before {
+	content: "\e60e";
+}
+.cmuj-mobile:before {
+	content: "\e60f";
+}
+.cmuj-home:before {
+	content: "\e610";
+}
+.cmuj-telephone:before {
+	content: "\e611";
+}

@@ -1,0 +1,30 @@
+{
+  "name": "frontendquillo",
+  "version": "0.0.10",
+  "homepage": "https://github.com/comparamejor/frontendquillo",
+  "authors": [
+    "Cristian Rojas <cristianguillermorojas@gmail.com>"
+  ],
+  "description": "This is the main front-end for ComparaMejor",
+  "main": "",
+  "keywords": [
+    ""
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.11.0",
+    "bootstrap": "3.2.0",
+    "fontawesome": "4.0.3",
+    "sugar": "~1.4.1",
+    "underscore": "~1.6.0",
+    "modernizr": "~2.7.2"
+  }
+}

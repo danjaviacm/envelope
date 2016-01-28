@@ -1,0 +1,15 @@
+{
+  "name": "Frondendquillo",
+  "description": "Main ComparaMejor's stylesheets and bower components.",
+  "version": "0.0.2",
+  "author": "Cristian Rojas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/comparamejor/frontendquillo"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-less": "~0.11.0",
+    "grunt-githooks": "~0.3.1"
+  }
+}

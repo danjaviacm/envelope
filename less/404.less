@@ -1,0 +1,123 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body.page-404, body.error404 {
+    background: url('@{frontendquillo-images-path}sections/404/background.jpg') no-repeat center center white;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+
+    header {
+        position: relative;
+        z-index: 1000;
+    }
+
+    footer#comparamejor-main-footer {
+        display: none !important;
+    }
+
+    main {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding-top: @header-height;
+
+        div#page-404 {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow-y: scroll;
+
+            div#sun {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            div#octopus {
+                @img-width: 170px;
+
+                width: @img-width;
+                position: absolute;
+                bottom: 10%;
+                left: 20%;
+
+                img {
+                    position: relative;
+                    z-index: 2;
+                }
+
+                &:after {
+                    content: "";
+                    display: block;
+                    width: @img-width;
+                    height: round(@img-width * 0.3);
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    background-color: rgba(0,0,0,0.2);
+                    z-index: 1;
+                    @border-radius-a: round(@img-width * 0.5);
+                    @border-radius-b: round(@img-width * 0.15);
+                    border-radius: ~"@{border-radius-a} / @{border-radius-b}";
+                }
+            }
+
+            div#message {
+                img {
+                    float: none;
+                    display: inline-block;
+                    clear: both;
+                }
+
+                h3 {
+                    background-color: black;
+                    color: white;
+                    display: inline-block;
+                    margin: 0 auto;
+                    padding: 4px @grid-gutter-width-half;
+                }
+
+                p {
+                    color: white;
+                    font-size: round(@font-size-base * 1.2);
+                    display: block;
+                    padding: 0 @grid-gutter-width * 2;
+                }
+
+                a.btn {
+                    background-color: transparent;
+                    border-color: white;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    @media (max-width: @screen-xs-max){
+        main {
+            div#page-404 {
+                div#octopus {
+                    bottom: -200px;
+                }
+
+                div#message {
+                    margin-bottom: 200px;
+
+                    h3 {
+                        font-size: @font-size-h4;
+                    }
+
+                    p {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}

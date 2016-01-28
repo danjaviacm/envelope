@@ -1,0 +1,81 @@
+// Header responsive
+// -----------------------------------------------------------------------------
+@media(min-width: @screen-md-min) and (max-width: @screen-md-max){
+    header#comparamejor-main-header {
+        .navbar {
+            .navbar-brand {
+                padding-left: round(@grid-gutter-width-half * 0.5);
+                padding-right: @grid-gutter-width-half;
+            }
+
+            ul.navbar-nav {
+                > li {
+                    @padding-lateral: round(@grid-gutter-width * 0.15);
+                    padding-left: @padding-lateral;
+                    padding-right: @padding-lateral;
+
+                    > a {
+                        padding: 0 round(@grid-gutter-width-half * 0.25);
+                    }
+
+                    &#account-button {
+                        padding-left: round(@grid-gutter-width-half * 0.5); // the same as the others
+                    }
+                }
+            }
+
+            p#header-phones {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@media(min-width: @screen-sm-min) and (max-width: @screen-sm-max){
+    header#comparamejor-main-header {
+        .navbar {
+            .navbar-brand {
+                padding-left: round(@grid-gutter-width-half * 0.5);
+                padding-right: @grid-gutter-width-half;
+            }
+
+            .navbar-collapse {
+                padding-right: 0;
+            }
+
+            ul.navbar-nav {
+                > li {
+                    @padding-lateral: round(@grid-gutter-width * 0.15);
+                    padding-left: 0;
+                    padding-right: 0;
+
+                    &#account-button {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: @screen-xs-max){
+    header#comparamejor-main-header {
+        .navbar {
+            a.navbar-brand {
+                padding-right: 0;
+                padding-left: @grid-gutter-width-half;
+                position: absolute;
+                left: 0;
+                top: 0;
+                img {
+
+                }
+            }
+
+            button.navbar-toggle {
+                @this-height: 34px; // got from firebug with bootstrap defaults
+                margin: round((@header-height - @this-height) * 0.5) @grid-gutter-width-half;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.btn {
+  text-transform: uppercase;
+  font-weight: @font-weight-medium;
+  font-family: @headings-font-family;
+  letter-spacing: 0.5px;
+}
+
+.btn-orange {
+  .button-variant(@btn-orange-color; @btn-orange-bg; @btn-orange-border);
+  border: 1px solid @btn-orange-bg;
+}
+
+.btn-orange-bordered {
+  .button-variant(@cm-orange; transparent; @cm-orange);
+}
+
+.btn-xs {
+  border-radius: 5px;
+}
+
+.btn-xlg {
+  // line-height: ensure even-numbered height of button next to large input
+  .button-size(
+  round(@padding-large-vertical * 1.2);
+  round(@padding-large-horizontal * 1.4);
+  round(@font-size-large * 1.2);
+  round(@line-height-large * 1.2);
+  round(@border-radius-large * 1.2)
+  );
+}
